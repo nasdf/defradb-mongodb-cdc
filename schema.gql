@@ -1,0 +1,9 @@
+# represents a unique document at a specific change set
+type MongoDocument @index(unique: true, includes: [{field: "id"}, {field: "collection"}]) {
+    # mongo document _id field
+    id: String
+    # mongo collection the document belongs to
+    collection: String
+    # hex encoded bson document 
+    document: String
+}
