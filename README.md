@@ -4,3 +4,16 @@ This repo contains a proof of concept for change data capture from MongoDB using
 
 MongoDB is configured as a single node replica so that DefraDB can listen for events from the change stream. The `docker-compose.yml` file contains an example of how to configure the MongoDB replica node.
 
+## Running
+
+Start the compose:
+
+```bash
+$ docker-compose up
+```
+
+Run the main file:
+
+```bash
+$ go run main.go
+```

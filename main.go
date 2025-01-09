@@ -130,7 +130,6 @@ func main() {
 				if err != nil {
 					panic(err)
 				}
-				fmt.Printf("\n\nevent.MergeComplete: %s\n\n", idHex.Value().(string))
 				id, err := bson.ObjectIDFromHex(idHex.Value().(string))
 				if err != nil {
 					panic(err)
@@ -166,7 +165,6 @@ func main() {
 				if err != nil {
 					panic(err)
 				}
-				fmt.Printf("\n\nevent.Update: %s\n\n", idHex.Value().(string))
 				id, err := bson.ObjectIDFromHex(idHex.Value().(string))
 				if err != nil {
 					panic(err)
@@ -196,17 +194,3 @@ func main() {
 	signal.Notify(done, syscall.SIGINT, syscall.SIGTERM)
 	<-done
 }
-
-// func encodeDocument(data bson.RawValue) (string, error) {
-// 	var doc map[string]any
-// 	err := bson.Unmarshal(data.Value, &doc)
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	delete(doc, "_id")
-// 	out, err := bson.Marshal(doc)
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	return hex.EncodeToString(out), nil
-// }
